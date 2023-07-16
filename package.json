@@ -1,0 +1,20 @@
+{
+    "name": "@fab1o/wikipedia-api",
+    "version": "0.0.1",
+    "description": "A wrapper API around the Wikipedia API.",
+    "main": "src/index.js",
+    "author": {
+        "name": "Fabio Costa",
+        "url": "https://github.com/fab1o"
+    },
+    "scripts": {
+        "test": "jest",
+        "docs": "jsdoc2md src/index.js src/enums/*.js src/articleApi.js src/mostViewedApi.js > docs.md"
+    },
+    "license": "ISC",
+    "type": "commonjs",
+    "devDependencies": {
+        "jest": "29.6.1",
+        "jsdoc-to-markdown": "8.0.0"
+    }
+}
