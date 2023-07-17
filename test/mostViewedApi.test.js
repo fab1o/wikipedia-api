@@ -3,7 +3,7 @@ const { MostViewedApi, Month } = require('../src/index.js');
 describe('MostViewedApi', () => {
     let mostViewedApi;
 
-    beforeAll(() => {
+    beforeEach(() => {
         mostViewedApi = new MostViewedApi();
     });
 
@@ -25,6 +25,8 @@ describe('MostViewedApi', () => {
     });
 
     it('should cache and not call fetch', async () => {
+        await mostViewedApi.getMostViewedByMonth(Month.January, 2023);
+
         const spy = jest.spyOn(global, 'fetch');
 
         const articles = await mostViewedApi.getMostViewedByMonth(

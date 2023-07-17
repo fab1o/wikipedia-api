@@ -3,7 +3,7 @@ const { ArticleApi, Month } = require('../src/index.js');
 describe('ArticleApi', () => {
     let articleApi;
 
-    beforeAll(() => {
+    beforeEach(() => {
         articleApi = new ArticleApi('Brazil');
     });
 
@@ -14,6 +14,8 @@ describe('ArticleApi', () => {
     });
 
     it('should cache and not call fetch', async () => {
+        await articleApi.getMostViewsMonthDay(Month.January, 2023);
+
         const spy = jest.spyOn(global, 'fetch');
 
         const day = await articleApi.getMostViewsMonthDay(Month.January, 2023);
